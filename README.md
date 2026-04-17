@@ -26,6 +26,6 @@
 $botToken = "YOUR_BOT_TOKEN";
 $chatId = "YOUR_CHAT_ID";
 
-### 4.실행 방법 (Crontab) ###
+### 4.실행 방법 (Crontab)
  매일 오전 9시에 자동으로 알림이 실행되도록 서버의 크론탭(crontab -e)에 아래 명령어를 등록합니다.
-'0 9 * * * /usr/bin/php /home/ubuntu/domain-alarm/alarm.php > /dev/null 2>&1'
+0 9 * * * /usr/bin/php /home/ubuntu/domain-alarm/alarm.php > /dev/null 2>&1
