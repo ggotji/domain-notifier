@@ -31,3 +31,17 @@ $chatId = "YOUR_CHAT_ID";
 ```bash
 0 9 * * * /usr/bin/php /home/ubuntu/domain-alarm/alarm.php > /dev/null 2>&1
 ```
+## 🤖 텔레그램 봇 및 그룹 ID 설정 방법
+
+### 1. 텔레그램 봇 생성
+1. 텔레그램에서 [@BotFather](https://t.me/botfather)를 검색하여 대화를 시작합니다.
+2. `/newbot` 명령어를 입력하고 봇의 이름과 아이디를 설정합니다.
+3. 생성 완료 후 발급된 **HTTP API 토큰**을 복사하여 `config.php`의 `$botToken`에 넣습니다.
+
+### 2. 그룹 ID(Chat ID) 확인 방법
+1. 텔레그램 그룹을 만들고, 방금 만든 **봇을 그룹에 초대**합니다.
+2. 봇에게 아무 메시지나 보냅니다 (예: `/test`).
+3. 브라우저에서 아래 주소로 접속합니다 (토큰 부분에 본인의 토큰 입력).
+   `https://api.telegram.org/bot[본인의_토큰]/getUpdates`
+4. 화면에 나오는 결과 중 `"chat":{"id":-123456789...}` 부분을 찾습니다.
+5. 이때 **`-`로 시작하는 숫자 전체**가 그룹 ID입니다. 이 값을 `config.php`의 `$chatId`에 넣습니다.
